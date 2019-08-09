@@ -13,3 +13,7 @@ Ingredient.create(name: "Gin")
 Ingredient.create(name: "Scotch")
 Ingredient.create(name: "Tequila")
 puts "finished seedig"
+Cocktail.create(name: 'margherita')
+Cocktail.create(name: 'mojito')
+Cocktail.create(name: 'rhum')
+Cocktail.create(name: 'cuba libre')
