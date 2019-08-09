@@ -3,16 +3,16 @@
     <h1><strong>Cocktails for you!</strong></h1>
   </div>
 
-
 <div class="container">
   <div class="row">
     <% @cocktails.each do |c| %>
     <div class="col-4">
-        <div class="card">
-          <p>
-            <%= c.id %>
-            <%= link_to c.name, cocktail_path(c) %>
-          </p>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src='<%= cloudinary_url c.photo %>' alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">tequila</h5>
+            <%= link_to 'See details', cocktail_path(c)  %>
+          </div>
         </div>
       </div>
     <% end %>
