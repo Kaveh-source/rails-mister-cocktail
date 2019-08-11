@@ -1,21 +1,31 @@
-  <div class="container">
-    <h2><%= link_to 'Go back', cocktails_path%></h2>
-    <h1>Name: <%= @cocktail.name %>
-<%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
-    </h4>
-      <% @cocktail.doses.each do |dose| %>
-        <div class="card">
-           <div>
-            <span><%= dose.description %> <%= dose.ingredient.name %></span>
-              <span>
-                <%= link_to 'delete', dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
-              </span>
-             </div>
-        </div>
-      <% end %>
-  <p><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %></p>
+<div class="container mt-3" id="cocktail-list">
+
+  <h3 class="mb-3"><%= @cocktail.name %></h3>
+  <%= link_to 'Delete this cocktail', cocktail_path(@cocktail), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
+  <div class="row">
+<div class="col">
+      <div class="card mb-3">
+        <img class="card-img-top img-show"
+        src='<%= cloudinary_url @cocktail.photo %>'  />
+      </div>
+    </div>
+    <div class="col">
+      <div class="container">
+        <h5 class="card-title">Ingredients</h5>
+        <% @cocktail.doses.each do |dose| %>
+        <div class="card mb-3">
+            <div class="card-body">
+              <%= dose.description %> <%= dose.ingredient.name %>
+              <%= link_to 'delete', dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'}, class: 'far fa-trash-alt'%>
+
+            </div>
+          </div>
+          <% end %>
+
+            <p><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %></p>
+
+      </div>
+    </div>
 </div>
-
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-
+</div>
 
