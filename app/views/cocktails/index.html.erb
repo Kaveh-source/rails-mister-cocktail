@@ -10,15 +10,17 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |c| %>
-    <div class="col-4">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src='<%= cloudinary_url c.photo %>' alt="Card image cap">
+    <div class="col d-flex align-items-stretch">
+        <div class="card mt-3 align-items-center" style="width: 15rem">
+        <img class="card-img-top" src='<%= cloudinary_url c.photo %>' alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= c.name %></h5>
             <%= link_to 'See details', cocktail_path(c)  %>
           </div>
         </div>
-      </div>
+    </div>
+
+
     <% end %>
 </div>
 </div>
