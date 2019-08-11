@@ -2,6 +2,9 @@
   <div class="container">
     <h1><strong>Cocktails for you!</strong></h1>
   </div>
+  <div class="container">
+  <div><%= link_to 'Add a cocktail', new_cocktail_path %></div>
+  </div>
 
 <div class="container">
   <div class="row">
@@ -10,12 +13,11 @@
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src='<%= cloudinary_url c.photo %>' alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">tequila</h5>
+            <h5 class="card-title"><%= c.name %></h5>
             <%= link_to 'See details', cocktail_path(c)  %>
           </div>
         </div>
       </div>
     <% end %>
-  <p><%= link_to 'Other Cocktail', new_cocktail_path %></p>
 </div>
 </div>
