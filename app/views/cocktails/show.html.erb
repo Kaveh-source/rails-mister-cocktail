@@ -1,10 +1,16 @@
   <div class="container">
-    <h1><%= link_to 'back', cocktails_path%><%= @cocktail.name %></h4>
+    <h2><%= link_to 'Go back', cocktails_path%></h2>
+    <h1>Name: <%= @cocktail.name %>
+
+    </h4>
       <% @cocktail.doses.each do |dose| %>
         <div class="card">
-           <p><%= dose.description %> <%= dose.ingredient.name %>
-              <%= link_to 'delete', dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
-             </p>
+           <div>
+            <span><%= dose.description %> <%= dose.ingredient.name %></span>
+              <span>
+                <%= link_to 'delete', dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
+              </span>
+             </div>
         </div>
       <% end %>
   <p><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %></p>

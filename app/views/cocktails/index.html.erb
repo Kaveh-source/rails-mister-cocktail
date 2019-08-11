@@ -1,9 +1,10 @@
+
+
 <div class="banner">
   <div class="container">
     <h1><strong>Cocktails for you!</strong></h1>
   </div>
   <div class="container">
-  <div><%= link_to 'Add a cocktail', new_cocktail_path %></div>
   </div>
 
 <div class="container">
@@ -15,6 +16,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= c.name %></h5>
             <%= link_to 'See details', cocktail_path(c)  %>
+<%= link_to 'delete', cocktail_path(c), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'%>
           </div>
         </div>
       </div>
