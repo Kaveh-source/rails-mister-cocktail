@@ -1,7 +1,6 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
-    puts @cocktails
   end
 
   def show
