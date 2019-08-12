@@ -16,4 +16,6 @@ puts "finished seedig"
 Cocktail.create(name: 'margharita')
 Cocktail.create(name: 'mojito')
 Cocktail.create(name: 'rhum')
-Cocktail.create(name: 'cuba libre')
+Cocktail.create(name: 'Cuba libre')
+Cocktail.create(name: 'Sekanjabin')
+Cocktail.create(name: 'Reyhan')
