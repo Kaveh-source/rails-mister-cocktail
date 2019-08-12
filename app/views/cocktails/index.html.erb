@@ -12,7 +12,8 @@
     <% @cocktails.each do |c| %>
     <div class="col d-flex align-items-stretch">
         <div class="card mt-3 align-items-center" style="width: 15rem">
-        <img class="card-img-top" src='<%= cloudinary_url c.photo %>' alt="Card image cap">
+
+        <%= cl_image_tag c.photo.url %>
           <div class="card-body">
             <h5 class="card-title"><%= c.name %></h5>
             <%= link_to 'See details', cocktail_path(c)  %>
